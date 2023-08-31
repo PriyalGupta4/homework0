@@ -65,3 +65,5 @@ plot(x, a*x^2 + b*x + c, type = "l")
 abline(h = 0, lty = 2)
 
 ```
+
+This is the graph of f(x) = a*x\^2 + b*\*x + c = 0. This is a graph of f(x) versus x for x $\in$ (-5,5).
