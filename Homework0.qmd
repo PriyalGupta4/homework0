@@ -1,0 +1,67 @@
+---
+title: "Homework 0"
+format: html
+editor: visual
+execute:
+  echo: false
+---
+
+```{r}
+a <- 1
+b <- 3
+c <- 2
+```
+
+The Quadratic Equation is: ax² + bx + c = 0
+
+```{r}
+values <- sprintf("a = %d ,b = %d, c = %d", a,b,c)
+
+cat(values)
+```
+
+After plugging in the values for a, b, and c, you are left with
+
+```{r}
+a <- 1
+b <- 3
+c <- 2
+
+qfunction <- sprintf("%d*x^2 + %d*x + %d = 0", a, b, c )
+cat(qfunction)
+```
+
+To calculate x, the quadratic formula is used: x = (-b ± √(b² - 4ac)) / 2a.
+
+In this case, it would be
+
+```{r}
+qformula <- sprintf("x = (-%d ± √(%d² - 4* %d * %d)) / 2* %d", b, b, a, c, a )
+cat(qformula)
+
+```
+
+```{r}
+discriminant <- b^2 - 4*a*c 
+
+if(discriminant > 0) {
+  x1 <- (-b + sqrt(discriminant)) / (2*a)
+  x2 <- (-b - sqrt(discriminant)) / (2*a)
+  cat(sprintf("The value for x1 = %d and the value for x2 = %d", x1, x2 ))  
+
+} else if(discriminant < 0) {
+  print("The values for x are complex roots")  
+  
+} else {
+  x <- -b / (2*a)
+  cat(sprintf("The value for x is equal to %d", x))  
+  
+}
+
+
+
+x <- seq(-5, 5, length = 300)
+plot(x, a*x^2 + b*x + c, type = "l")
+abline(h = 0, lty = 2)
+
+```
